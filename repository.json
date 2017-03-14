@@ -3,7 +3,6 @@
 
 	"packages": [
 		{
-			"name": "FISPIP Studio",
 			"details": "https://github.com/fopina/sublime-fispipstudio/",
 			"releases": [
 				{
