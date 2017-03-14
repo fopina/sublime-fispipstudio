@@ -1,0 +1,32 @@
+{
+	"schema_version": "3.0.0",
+
+	"packages": [
+		{
+			"name": "FISPIP Studio",
+			"details": "https://github.com/fopina/sublime-fispipstudio/",
+			"releases": [
+				{
+					"sublime_text": "*",
+					"tags": true
+				}
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"name": "pyfispip",
+			"load_order": "50",
+			"description": " Python FIS MTM/PIP SQL/RPC Interface",
+			"author": "fopina",
+			"issues": "https://github.com/fopina/sublime-pyfispip/issues",
+			"releases": [
+				{
+					"base": "https://github.com/fopina/sublime-pyfispip",
+					"tags": true,
+					"sublime_text": "*"
+				}
+			]
+		}
+	]
+}
