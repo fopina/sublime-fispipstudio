@@ -1,0 +1,35 @@
+[
+	{ "caption": "-" },
+	{
+		"caption": "FIS-PIP",
+		"children":
+		[
+			{
+				"caption": "Add configuration...",
+				"command": "fis_pip_create_config",
+				"args": {"paths": []}
+			},
+			{
+				"caption": "Send to host",
+				"command": "fis_pip_send",
+				"args": {"paths": []}
+			},
+			{
+				"caption": "Refresh from host",
+				"command": "fis_pip_refresh",
+				"args": {"paths": []}
+			},
+			{
+				"caption": "Test compile",
+				"command": "fis_pip_test_compile",
+				"args": {"paths": []}
+			},
+			{ "caption": "-" },
+			{
+				"caption": "Edit configuration...",
+				"command": "fis_pip_edit_config",
+				"args": {"paths": []}
+			}
+		]
+	}
+]

@@ -1,0 +1,24 @@
+[
+	{ "caption": "-" },
+	{
+		"caption": "FIS-PIP",
+		"children":
+		[
+			{
+				"caption": "Send to host",
+				"command": "fis_pip_send",
+				"args": {"paths": []}
+			},
+			{
+				"caption": "Refresh from host",
+				"command": "fis_pip_refresh",
+				"args": {"paths": []}
+			},
+			{
+				"caption": "Test compile",
+				"command": "fis_pip_test_compile",
+				"args": {"paths": []}
+			}
+		]
+	}
+]
