@@ -7,7 +7,7 @@
 			"details": "https://github.com/fopina/sublime-fispipstudio/",
 			"releases": [
 				{
-					"sublime_text": "*",
+					"sublime_text": ">=3000",
 					"tags": true
 				}
 			]
