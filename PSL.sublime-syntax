@@ -1,0 +1,70 @@
+%YAML 1.2
+---
+# Syntax File based on ST3 example "example-c" syntax definition
+file_extensions:
+  - psl
+  - proc
+scope: source.psl
+contexts:
+  main:
+    # Strings begin and end with quotes, and use double-quote as
+    # an escape character
+    - match: '"'
+      scope: punctuation.definition.string.begin.psl
+      push: double_quoted_string
+
+    # Comments begin with a '//' and finish at the end of the line
+    - match: '//'
+      scope: punctuation.definition.comment.psl
+      push: line_comment
+
+    # Block comments begin with a '/*' and finish with '*/'
+    - match: '/\*'
+      scope: punctuation.definition.comment.psl
+      push: block_comment
+
+    # Numbers (decimals included)
+    - match: '\b(-)?[0-9.]+\b'
+      scope: constant.numeric.psl
+
+    - match: '\b(true|false)\b|%[A-Za-z0-9]+|#[A-Za-z0-9]+'
+      scope: 'constant.language.psl'
+
+    - match: '\b(this|super)\b'
+      scope: 'variable.language.psl'
+
+    - match: '\b(if|else|while|for|return|quit|do|catch|throw|halt|hang)\b'
+      scope: keyword.control.psl
+  
+    # list built directly from PIP directory with
+    # $ find . -name *.pslx -exec grep -lP 'extends" : "\w+"' {} \; | grep -v '/Record' | cut -d '/' -f4 | sed -e 's/\.pslx//g' | xargs echo | tr ' ' '|'
+    - match: '\b(PSLColumn|Row|TBXTypeInterface|PSL|RowSet|Boolean|SchemaTable|PSLExpression|String|Reference|ResultSet|UCRUNTIM|PSLParser|Column|Runtime|PSLClass|TBXPSLX|Number|PSLBuffer|IO|List|DbSet|PSLSubrou|Class|Memo|PSLIdentifier|PSLRecordBuilder|PSLMethod|Time|PSLCC|PSLProperty|TBXPSL|Primitive|PSLTokenizer|Date|PSLX|Cache|Error|PSLTable|Db|SchemaColumn|ByteString|Integer|Record[A-Za-z0-9]+)\b'
+      scope: 'entity.name.class'
+
+    - match: '\b(set|type|literal|new|private|protected|public|static|super|void|kill|lock|unlock)\b'
+      scope: 'storage.modifier.psl'
+
+    - match: '\_|\''|\^|\+|\-|\*|\;|\=|\<|\>|\:|\!|\[|\b(and|not|or)\b'
+      scope: 'keyword.operator.psl'
+
+    - match: '\b(job|read|write)\b'
+      scope: 'keyword.psl'
+
+  # TODO: this is not double-quoted...
+  double_quoted_string:
+    - meta_scope: string.quoted.double.psl
+    - match: '\\.'
+      scope: constant.character.escape.psl
+    - match: '\"'
+      scope: punctuation.definition.string.end.psl
+      pop: true
+
+  line_comment:
+    - meta_scope: comment.line.psl
+    - match: $
+      pop: true
+
+  block_comment:
+    - meta_scope: comment.line.psl
+    - match: '\*/'
+      pop: true

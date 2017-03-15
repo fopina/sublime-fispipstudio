@@ -1,0 +1,10 @@
+version: '2.1'
+services:
+  inges:
+    image: fopina/fis-pip
+    ports:
+     - "61315:61315"
+    sysctls:
+     - kernel.msgmnb=65536000
+     - kernel.msgmni=512
+     - kernel.msgmax=1048700

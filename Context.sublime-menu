@@ -1,7 +1,7 @@
 [
 	{ "caption": "-" },
 	{
-		"caption": "FIS-PIP",
+		"caption": "FISPIP Studio",
 		"children":
 		[
 			{
@@ -17,6 +17,20 @@
 			{
 				"caption": "Test compile",
 				"command": "fis_pip_test_compile",
+				"args": {"paths": []}
+			},
+			{
+				"caption": "Compile and Link",
+				"command": "fis_pip_compile_and_link",
+				"args": {"paths": []}
+			},
+			{
+				"caption": "Run PSL",
+				"command": "fis_pip_run_psl",
+				"args": {"paths": []}
+			},
+			{
+				"command": "fis_pip_missing_config",
 				"args": {"paths": []}
 			}
 		]

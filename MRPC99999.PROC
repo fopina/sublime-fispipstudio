@@ -1,0 +1,46 @@
+//DO NOT MODIFY  Run PSL Remotely|MRPC99999|||||||1
+	#OPTION ResultClass ON
+
+public String MRPC99999(ret String RETURN,Number VERSION,String CMPTOK)
+
+	/*
+	ORIG: fopina - 03/15/2017
+	DESC: Run PSL code remotely
+
+	This MRPC facilitates the use of PSLRUN^TBXDQSVR
+	which is not exposed by the official toolbox MRPC121.
+	
+	ARGUMENTS:
+	
+	    . RETURN	Return value			/REQ/MECH=REFNAM:W
+	    
+	    . VERSION	MRPC99999 version number		/REQ/MECH=VAL 
+	                                               
+	    . CMPTOK	Compilation token		/MECH=VAL
+	    			
+	    		Same CMPTOK return by MRPC121 call
+
+	RETURNS:
+	      . $$      Message
+
+	---- Revision History ------------------------------------------------
+	
+	03/15/2017 - fopina
+		Initial version.
+
+ 	*/
+
+ 	if VERSION.get()'=1 quit $$ERRMSG^PBSUTL($$^MSG(2951))
+ 	if CMPTOK.get().isNull() quit $$ERRMSG^PBSUTL($$^MSG(8607))
+
+ 	type Number ER
+	type String RM
+	type void OUTPUT(ByteString)
+
+	// no other way around "non-PSL routine"
+	#ACCEPT GROUP=ACCESS;CR=x;DATE=2017-03-15;PGM=fopina
+	set OUTPUT(1) = $$PSLRUN^TBXDQSVR(CMPTOK)
+
+	if ER.get() quit $$ERRMSG^PBSUTL(OUTPUT(1))
+ 	set RETURN=$$V2LV^MSG(OUTPUT())
+	quit ""

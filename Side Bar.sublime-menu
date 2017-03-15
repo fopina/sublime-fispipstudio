@@ -1,12 +1,17 @@
 [
 	{ "caption": "-" },
 	{
-		"caption": "FIS-PIP",
+		"caption": "FISPIP Studio",
 		"children":
 		[
 			{
 				"caption": "Add configuration...",
 				"command": "fis_pip_create_config",
+				"args": {"paths": []}
+			},
+			{
+				"caption": "Get from host...",
+				"command": "fis_pip_get",
 				"args": {"paths": []}
 			},
 			{
@@ -22,6 +27,16 @@
 			{
 				"caption": "Test compile",
 				"command": "fis_pip_test_compile",
+				"args": {"paths": []}
+			},
+			{
+				"caption": "Compile and Link",
+				"command": "fis_pip_compile_and_link",
+				"args": {"paths": []}
+			},
+			{
+				"caption": "Run PSL",
+				"command": "fis_pip_run_psl",
 				"args": {"paths": []}
 			},
 			{ "caption": "-" },

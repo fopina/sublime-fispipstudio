@@ -1,0 +1,27 @@
+[
+    {
+		"caption": "FISPIP Studio: Send to host",
+		"command": "fis_pip_send",
+		"args": {"paths": []}
+	},
+	{
+		"caption": "FISPIP Studio: Refresh from host",
+		"command": "fis_pip_refresh",
+		"args": {"paths": []}
+	},
+	{
+		"caption": "FISPIP Studio: Test compile",
+		"command": "fis_pip_test_compile",
+		"args": {"paths": []}
+	},
+	{
+		"caption": "FISPIP Studio: Compile and Link",
+		"command": "fis_pip_compile_and_link",
+		"args": {"paths": []}
+	},
+	{
+		"caption": "FISPIP Studio: Run PSL",
+		"command": "fis_pip_run_psl",
+		"args": {"paths": []}
+	},
+]
